@@ -1,0 +1,74 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.text-decoration{
+    text-decoration: none;
+}
+.font{
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 13px;
+     color: rgb(66, 66, 66);
+     text-align: center;
+}
+.font:hover{
+    color:teal;
+    cursor: pointer;
+    border-bottom: 2px solid #ccc;
+}
+
+.header__nav{
+    height: 40px;
+    background-color: rgb(170,187,173);
+    line-height: 40px;
+    text-align: center;
+    letter-spacing: 0.25em;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 15px;
+    color: rgb(66, 66, 66);
+}
+.nav__bar{
+    padding: 0 16%;
+    height: 202px;
+}
+.nav__title{
+    position: absolute;
+    font-size: 29px;
+    top: 20%;
+    padding: 12px 40px;
+    text-transform: uppercase;
+    border: 7px solid rgb(66, 66, 66);
+    color: rgb(66, 66, 66);
+    letter-spacing: 0.37em;
+    text-align: center;
+    line-height: normal;
+}
+.nav__link{
+    position: absolute;
+    top: 23.5%;
+    left: 33%;
+    font: var(--fnt,var(--font_1));
+    margin: 29px 0 0 30px;
+    display: flex;
+    &>li{
+     padding: 0 30px;
+     list-style-type: none;
+     text-transform: uppercase;
+    }
+}
+.login__btn{
+    position: absolute;
+    top: 23.5%;
+    left: 80%;
+    margin-top: 29px 0;
+    line-height: normal;
+    border-style: none;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+.logout__btn{
+    position: absolute;
+    margin-top: 500;
+}

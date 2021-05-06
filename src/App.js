@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import MessengerCustomerChat from 'react-messenger-customer-chat';
+import { Route, Switch } from "react-router";
+import CategoryFeature from "./features/Category";
+import Header from "./features/header";
+import ProductFeature from "./features/Product";
+import HomeFeatures from "./features/ProductforHome";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <Switch>
+        <Route path='/products' component={ProductFeature}/>
+        <Route path='/category' component={CategoryFeature}/>
+        <Route path='/productforhome' component={HomeFeatures}/>
+      </Switch>
+      <MessengerCustomerChat   pageId="103977878530075"  appId="1658852460972444"/>
     </div>
   );
 }
