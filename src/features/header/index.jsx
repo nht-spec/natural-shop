@@ -65,7 +65,7 @@ const MODE= {
         <div>
           <Box className='header__nav'>FREE SHIPPING ON ORDERS OVER 50$</Box>  
           <div className='nav__bar'>
-          <h1 className='nav__title'>frais</h1>
+          <NavLink to='/' exact><h1 className='nav__title'>frais</h1></NavLink>
           <ul className='nav__link '>
             <li><NavLink className='text-decoration font' to='/products'>Shop all</NavLink></li>
             <li><NavLink className='text-decoration font' to='/category'>For body</NavLink></li>
