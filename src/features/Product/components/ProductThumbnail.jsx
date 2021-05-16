@@ -11,7 +11,7 @@ function ProductThumbnail({product}) {
     const thumbnailUrl = `${STATIC_HOST}${product.image?.url}` 
 
     return (
-        <Box>
+        <Box className='thumbnail__product'>         
          <img src={thumbnailUrl}alt=""/>
         </Box>
     );

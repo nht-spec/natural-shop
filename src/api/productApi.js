@@ -27,7 +27,7 @@ const productApi = {
     },
 
     add(data){
-        const url ='/products';
+        const url ='/items';
         return axiosClient.post(url, data);
     },
 

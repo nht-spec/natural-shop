@@ -4,10 +4,10 @@ import axiosClient from "./axiosClient";
 const categoryApi = {
    async getAll(params){
        const newParams = { ...params};
-       newParams._start = !params._page || params <=1 ? 0 : (params._page -1) * (params._limit || 50);
+       newParams._start = !params._page || params <=1 ? 0 : (params._page -1) * (params._limit || 9);
        delete newParams._page;
-       const categoryList = await axiosClient.get('/catories',{params: newParams});
-       const count = await axiosClient.get('/catories/count', {params: newParams});
+       const categoryList = await axiosClient.get('/items',{params: newParams});
+       const count = await axiosClient.get('/items/count', {params: newParams});
        return{
            data: categoryList,
            pagination: {
@@ -18,10 +18,10 @@ const categoryApi = {
        };
     },
 
-    // get(id){
-    //     const url =`/categories/${id}`;
-    //     return axiosClient.get(url);
-    // },
+    get(id){
+        const url =`/items/${id}`;
+        return axiosClient.get(url);
+    },
 
     // add(data){
     //     const url ='/categories';

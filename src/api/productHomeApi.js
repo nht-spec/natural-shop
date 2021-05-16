@@ -6,8 +6,8 @@ const productHomeApi = {
        const newParams = { ...params};
        newParams._start = !params._page || params <=1 ? 0 : (params._page -1) * (params._limit || 50);
        delete newParams._page;
-       const producthomeList = await axiosClient.get('/homes',{params: newParams});
-       const count = await axiosClient.get('/homes/count', {params: newParams});
+       const producthomeList = await axiosClient.get('/items',{params: newParams});
+       const count = await axiosClient.get('/items/count', {params: newParams});
        return{
            data: producthomeList,
            pagination: {

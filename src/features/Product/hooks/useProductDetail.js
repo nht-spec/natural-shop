@@ -13,7 +13,6 @@ import productApi from "../../../api/productApi";
                  setProduct(result)
                 } catch (error) {
                  console.log('faile to fetch product', error);
-
              }
              setLoading(false)
          })();

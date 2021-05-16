@@ -3,7 +3,6 @@ import React from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router';
 import DetailPage from './pages/DetailPage';
 import ListPage from './pages/ListPage';
-import './style.scss';
 ProductFeature.propTypes = {
     
 };
@@ -13,8 +12,6 @@ function ProductFeature(props) {
     return (
         <Box>
             <Box className='title__product' padding= '0 16%'>
-            {/* <h1>ALL PRODUCTS</h1>
-            <p>Made of natural and organic ingredients</p> */}
             </Box>
         <Box>
             <Switch>

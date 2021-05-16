@@ -1,9 +1,10 @@
 import { Box, Container, Grid, makeStyles } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import productApi from '../../../api/productApi';
+import Footer from '../../footer';
 import ProductList from '../components/ProductList';
 import ProductSkeletonList from '../components/ProductSkeletonList';
-
+import './style.scss';
 ListPage.propTypes = {
     
 };
@@ -20,7 +21,6 @@ function ListPage(props) {
     const classes = useStyles();
     const [productList, setProductList]= useState([]);
     const [loading, setLoading]= useState(true);
-    
     useEffect(() => {
         (async () => {
             try {
@@ -32,11 +32,13 @@ function ListPage(props) {
             setLoading(false);
         })();
     }, []);
-      
+
     return (
         <Box>
-             <h1>ALL PRODUCTS</h1>
+            <Box className='title__product'>
+            <h1>ALL PRODUCTS</h1>
             <p>Made of natural and organic ingredients</p>
+            </Box>
             <Container>
                 <Grid container spacing={5}>
                     <Grid item className={classes.right}>
@@ -44,7 +46,10 @@ function ListPage(props) {
                     </Grid>
                 </Grid>
             </Container>
-
+            <Box className='footer__pages'>
+            <p></p>
+            <Footer/>
+            </Box> 
         </Box>
     );
 }

@@ -1,5 +1,7 @@
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 import { Route, Switch } from "react-router";
+import aboutFeature from './features/About/aboutFeature';
+import CartFeature from './features/Cart';
 import CategoryFeature from "./features/Category";
 import Header from "./features/header";
 import HomeNatural from './features/HomeNatural';
@@ -15,6 +17,8 @@ function App() {
         <Route path='/category' component={CategoryFeature}/>
         <Route path='/productforhome' component={HomeFeatures}/>
         <Route path= '/' exact component={HomeNatural}/>
+        <Route path='/cart' exact component={CartFeature}/>
+        <Route path='/about' exact component={aboutFeature}/>
       </Switch>
       <MessengerCustomerChat   pageId="103977878530075"  appId="1658852460972444"/>
     </div>

@@ -1,7 +1,7 @@
 import { Box } from '@material-ui/core';
 import React from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router';
-import HomePage from './Pages/HomePage';
+import ListPage from './Pages/ListPage';
 
 HomeFeatures.propTypes = {
     
@@ -12,7 +12,7 @@ function HomeFeatures(props) {
     return (
         <Box>
             <Switch>
-                <Route path={match.url} exact component={HomePage}/>
+                <Route path={match.url} exact component={ListPage}/>
             </Switch>
         </Box>
     );

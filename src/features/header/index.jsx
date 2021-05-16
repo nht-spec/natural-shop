@@ -1,15 +1,17 @@
-import { Box, Button, IconButton, makeStyles, Menu, MenuItem } from '@material-ui/core';
+import { Badge, Box, Button, IconButton, makeStyles, Menu, MenuItem } from '@material-ui/core';
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
-import { AccountCircle, Close } from '@material-ui/icons';
+import { AccountCircle, Close, ShoppingCartOutlined } from '@material-ui/icons';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import Login from '../Auth/components/Login';
 import Register from '../Auth/components/Register';
 import { logout } from '../Auth/userSlice';
-import './styles.scss'
+import { showMiniCart } from '../Cart/cartSlice';
+import { cartItemsCountSelector } from '../Cart/selectors';
+import './styles.scss';
 Header.propTypes = {
     closeDialog: PropTypes.func,
 };
@@ -25,16 +27,25 @@ const useStyles= makeStyles((theme)=>({
       position: 'absolute',
       fontSize:'25px',
       color:'rgb(66, 66, 66)',
-      marginTop:'118px',
-
+      top:theme.spacing(19),
+      left:theme.spacing(145),
     },
+    ShoppingCart:{
+      position: 'absolute',
+      fontSize:'25px',
+      color:'rgb(66, 66, 66)',
+      top:theme.spacing(19),
+      left:theme.spacing(151),
+    }
 }));
 
 const MODE= {
   LOGIN: 'login',
   REGISTER: 'register',
 };
- function Header(props) {
+ function Header() {
+   const history = useHistory()
+  const cartItemsCount = useSelector(cartItemsCountSelector);
   const dispatch= useDispatch();
   const loggedInUser = useSelector(state => state.user.current);
   const isLoggedIn = !!loggedInUser.id;
@@ -61,6 +72,13 @@ const MODE= {
     dispatch(action);
     setAnchorEl(null);
   }
+  const handleCartClick = () => {
+    history.push('/cart')
+  }
+  const handleShowMiniCart = () => {
+    const action = showMiniCart();
+    dispatch(action)
+  }
     return (
         <div>
           <Box className='header__nav'>FREE SHIPPING ON ORDERS OVER 50$</Box>  
@@ -70,26 +88,39 @@ const MODE= {
             <li><NavLink className='text-decoration font' to='/products'>Shop all</NavLink></li>
             <li><NavLink className='text-decoration font' to='/category'>For body</NavLink></li>
             <li><NavLink className='text-decoration font' to='/productforhome'>For Home</NavLink></li>
-            <li><NavLink className='text-decoration font' to='/products'>About</NavLink></li>
+            <li><NavLink className='text-decoration font' to='/about'>About</NavLink></li>
             <li><NavLink className='text-decoration font' to='/products'>Contact</NavLink></li>
           </ul>
           {!isLoggedIn &&(
-          <button  className='login__btn' onClick={handleClickOpen}>
-            <AccountCircle className={classes.avatar} style={{fontSize:'25px', margin:'0 10px 0 0', color:'rgb(66, 66, 66)'}}/>Log In
-          </button>         
+          <Button  className='login__btn' onClick={handleClickOpen}>Log In</Button>         
           )}
+
+           <IconButton className={classes.ShoppingCart} aria-label="show 4 new mails" color="inherit" onClick={handleCartClick}>
+          <Badge badgeContent= {cartItemsCount} color="secondary">
+            <ShoppingCartOutlined onClick={ handleShowMiniCart}/>
+          </Badge>
+        </IconButton>
+
           {isLoggedIn &&(
-            <IconButton  onClick={handleUserClick}>
-              <AccountCircle/>
+            <IconButton className={classes.avatar} onClick={handleUserClick}>
+              <AccountCircle />
             </IconButton>
           )}
           <Menu
             anchorEl={anchorEl}
             keepMounted
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'right',
+            }}
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            getContentAnchorEl={null}
             open={Boolean(anchorEl)}
             onClose={handleCloseMenu}
           >
-            <MenuItem onClick={handleCloseMenu}>My account</MenuItem>
             <MenuItem onClick={handleLogoutClick}>Logout</MenuItem>
           </Menu>
 
@@ -106,7 +137,7 @@ const MODE= {
             <>
              <Register closeDialog={handleClose}/>
              <Box>
-              <Button color='primary' onClick={()=> setMode(MODE.LOGIN)}>Already have an account. Login here</Button>
+              <Button fullWidth color='primary' onClick={()=> setMode(MODE.LOGIN)}> Login here</Button>
              </Box>
             </>)}
 
@@ -114,7 +145,7 @@ const MODE= {
             <>
              <Login closeDialog={handleClose}/>
              <Box>
-              <Button color='primary' onClick={()=> setMode(MODE.REGISTER)}>Register here</Button>
+              <Button fullWidth color='primary' onClick={()=> setMode(MODE.REGISTER)}>Register here</Button>
              </Box>
             </>)}
           </DialogContent>

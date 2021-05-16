@@ -1,0 +1,36 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+    .outline__form{
+        z-index:-3;
+    }
+
+.quantity__btn{
+    padding: 0 8px 0 8px;
+}
+.add__btn{
+    position: absolute;
+    bottom: 52px;
+    float: right;
+    right: 10px;
+    &>span{
+        left: 530%;
+        z-index: 2;
+        cursor: pointer;
+    }
+}
+.remove__btn{
+    &>span{
+    position: absolute;
+    top: 190%;
+    z-index: 2;
+        cursor: pointer;
+    }
+}
+.MuiInputBase-input:focus{
+    display: unset;
+}

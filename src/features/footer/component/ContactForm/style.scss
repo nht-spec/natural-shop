@@ -1,0 +1,19 @@
+.submit__list{
+    background-color: #576855;
+}
+.submit__btn{
+    &>span{
+        color: white;
+        font-size: 14px;
+        font-family: lulo-clean-w01-one-bold, sans-serif;
+        letter-spacing: 2px;
+        font-weight: 700;
+     }
+}
+.submit__list:hover,
+.submit__btn:hover{
+    background-color: #D2DED1;
+}
+.submit__btn>span:hover{
+    color: #424242;
+}

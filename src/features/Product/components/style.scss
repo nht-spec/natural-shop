@@ -14,3 +14,23 @@
     font-weight: 600;
     cursor: pointer;
 }
+.thumbnail__product{
+    &>img{
+        width: 440px;
+        margin-bottom: 40px;
+        border-radius: 4px;
+    }
+}
+.products__name{
+    color: #575757;
+    font-size: 26px !important;
+    font-family: questrial, sans-serif;
+    padding: 0 8px 0 8px;
+}
+.products__price{
+    padding: 23px 8px 0 8px;
+    color: #575757;
+    font-family: questrial, sans-serif;
+    font-size: 20px;
+
+}

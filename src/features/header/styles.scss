@@ -20,6 +20,7 @@
 
 .header__nav{
     height: 40px;
+    width: 100%;
     background-color: rgb(170,187,173);
     line-height: 40px;
     text-align: center;
@@ -59,16 +60,6 @@
 }
 .login__btn{
     position: absolute;
-    top: 23.5%;
-    left: 80%;
-    margin-top: 29px 0;
-    line-height: normal;
-    border-style: none;
-    background-color: white;
-    display: flex;
-    align-items: center;
-}
-.logout__btn{
-    position: absolute;
-    margin-top: 500;
+    top: 60%;
+    left: 87%;
 }
