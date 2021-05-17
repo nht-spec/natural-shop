@@ -25,7 +25,9 @@ function Footer(props) {
                     <li>
                     <NavLink to='/about'>About</NavLink>
                     </li>
-                    <li>Contact</li>
+                    <li>
+                    <NavLink to='/contact'>Contact</NavLink>
+                    </li>
                 </ul>
                 <ul>
                 <h2>Help</h2>

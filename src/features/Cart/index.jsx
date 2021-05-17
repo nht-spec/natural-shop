@@ -2,7 +2,7 @@ import { Box, Typography } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { cartItemsSelector, cartTotalSelector } from './selectors';
+import { cartItemsCountSelector, cartItemsSelector, cartTotalSelector } from './selectors';
 import './styles.scss';
 CartFeature.propTypes = {
     product: PropTypes.object,
@@ -18,6 +18,7 @@ CartFeature.defaulProps = {
 function CartFeature(props) {
     const cartTotal = useSelector(cartTotalSelector);
     const cartItems = useSelector(cartItemsSelector); 
+    const cartQuantity = useSelector(cartItemsCountSelector);
     return (
         <div>
             <Box>
@@ -34,12 +35,14 @@ function CartFeature(props) {
                      <div>
                          <img style={{width:'4%'}} src={product.product.image.name} alt="error" />
                          <div className='product__src'>
-                         <p className='product__name'>{product.product.name}</p>
-                         <p className='product__prices'>{product.product.priceProducts}</p>
+                         <p >{product.product.name}</p>
+                         <p >{product.product.priceProducts}</p>
+                         <p>{product.quantity}</p>
                          </div>
                      </div>
                  </div>
             ))}
+            <p>{cartQuantity}</p>
       
             </div>
             </div>

@@ -1,0 +1,54 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.contact__page1{
+    width: 548px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.input__list{  
+    list-style-type: none;
+    width: 548px;
+    float: right;
+}
+.input__title{
+    display: flex;
+}
+.input__name{
+    width: 257px;
+}
+.input__email{
+    width: 248px;
+    margin-left: auto;
+    
+}
+.MuiFormControl-marginNormal{
+    margin-top: 5px !important;
+}
+.input__submit{
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 186px;
+    height: 52px;
+}
+.input__btn{
+    width: 186px;
+    height: 52px;
+    border-style: none;
+    background-color: #576855;
+    letter-spacing: 3px;
+    line-height: 19.6px;
+    font-family: lulo-clean-w01-one-bold, sans-serif;
+    font-size: 15px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 800;
+    cursor: pointer;
+}
+.input__btn:hover{
+    background-color: #D2DED1;
+    color: #424242;
+}

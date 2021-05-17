@@ -35,7 +35,7 @@ const useStyles= makeStyles((theme)=>({
       fontSize:'25px',
       color:'rgb(66, 66, 66)',
       top:theme.spacing(19),
-      left:theme.spacing(151),
+      left:theme.spacing(152),
     }
 }));
 
@@ -89,7 +89,7 @@ const MODE= {
             <li><NavLink className='text-decoration font' to='/category'>For body</NavLink></li>
             <li><NavLink className='text-decoration font' to='/productforhome'>For Home</NavLink></li>
             <li><NavLink className='text-decoration font' to='/about'>About</NavLink></li>
-            <li><NavLink className='text-decoration font' to='/products'>Contact</NavLink></li>
+            <li><NavLink className='text-decoration font' to='/contact'>Contact</NavLink></li>
           </ul>
           {!isLoggedIn &&(
           <Button  className='login__btn' onClick={handleClickOpen}>Log In</Button>         

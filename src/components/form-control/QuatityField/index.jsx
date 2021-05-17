@@ -18,7 +18,7 @@ function QuatityField(props) {
     const hassError = !!errors[name];
     return (
         <FormControl fullWidth style={{marginLeft:'8px'}} error={hassError} >
-          <InputLabel htmlFor="name">{label}</InputLabel>
+          <InputLabel>{label}</InputLabel>
           <Controller
             name={name}
             control={form.control}
@@ -27,7 +27,7 @@ function QuatityField(props) {
                 <Button style={{fontSize:'22px', backgroundColor:'unset'}} className='remove__btn' onClick={()=>setValue(name, Number.parseInt(value) ? Number.parseInt(value) - 1: 1)}> - </Button>
                  <OutlinedInput className='quantity__btn'style={{padding:'0 0 0 45%', borderRadius:'unset', width:'96%'}}    
                  id={name}
-                 type='number'
+                //  type='number'
                  label={label}
                  disabled={disabled}
                  value={value}
