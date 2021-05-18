@@ -28,7 +28,7 @@ function Product({product}) {
         console.log(action);
         dispatch(action);
         };
-        const [hovered, setHovered] = useState(false);
+    const [hovered, setHovered] = useState(false);
 
     return (
         <Box>
