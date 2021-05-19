@@ -24,7 +24,7 @@ function ListPage(props) {
     useEffect(() => {
         (async () => {
             try {
-                const {data} =await productApi.getAll({ _page: 1, _limit: 9});
+                const {data} =await productApi.getAll({ _page: 2, _limit: 12});
                 setProductList(data);
             } catch (error) {
                 console.log('fail', error);
