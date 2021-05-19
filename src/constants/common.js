@@ -1,1 +1,1 @@
-export const STATIC_HOST ='http://localhost:1337';
+export const STATIC_HOST ='https://naturalshop-api.herokuapp.com';

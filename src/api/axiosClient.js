@@ -1,6 +1,6 @@
 const { default: axios } = require("axios");
 const axiosClient = axios.create({
-    baseURL:'http://localhost:1337/',
+    baseURL:'https://naturalshop-api.herokuapp.com',
     headers:{
         'Content-Type': 'application/json',
     },

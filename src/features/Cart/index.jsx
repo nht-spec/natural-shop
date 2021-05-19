@@ -40,7 +40,7 @@ function CartFeature(props) {
                          <img style={{width:'70px', paddingBottom:'15px'}} src={cartItem.product.image.name} alt="error" />
                          <p style={{width:'145px'}}> {cartItem.product.name}</p>
                          <p>{cartItem.quantity}</p>
-                         <p>${cartItem.product.priceProducts}</p>
+                         <p>${cartItem.product.PriceProducts}</p>
                              <HighlightOffOutlinedIcon style={{cursor:'pointer'}}  onClick={() => handleRemoveToCartSubmit(cartItem.id)}></HighlightOffOutlinedIcon>
                          </Box>
                      <h2></h2>

@@ -43,7 +43,7 @@ function Product({product}) {
             <Box paddingTop={1.5}>
             <Typography variant='body2'>{product.name}</Typography>
             <Box marginTop='5px'>
-            <Typography className='product__price' variant='body3'>${product.priceProducts}</Typography>
+            <Typography className='product__price' variant='body3'>${product.PriceProducts}</Typography>
             </Box>
             </Box>
         </Box>
