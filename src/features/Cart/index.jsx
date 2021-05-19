@@ -37,7 +37,7 @@ function CartFeature(props) {
                 <div key={cartItem.product.name}>
                      <div className='border__bottom'>
                          <Box className='product__item'>
-                         <img style={{width:'70px', paddingBottom:'15px'}} src={cartItem.product.image} alt="error" />
+                         <img style={{width:'70px', paddingBottom:'15px'}} src={cartItem.product.image.name} alt="error" />
                          <p style={{width:'145px'}}> {cartItem.product.name}</p>
                          <p>{cartItem.quantity}</p>
                          <p>${cartItem.product.PriceProducts}</p>
