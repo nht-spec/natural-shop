@@ -8,7 +8,7 @@ ProductThumbnail.propTypes = {
 };
 
 function ProductThumbnail({product}) { 
-    const thumbnailUrl = `${STATIC_HOST}${product.image?.url}` 
+    const thumbnailUrl = `${product.image?.url}` 
 
     return (
         <Box className='thumbnail__product'>         

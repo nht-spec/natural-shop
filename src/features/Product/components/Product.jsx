@@ -13,7 +13,7 @@ Product.propTypes = {
 };
 
 function Product({product}) { 
-    const thumbnailUrl = `${STATIC_HOST}${product.image?.url}` 
+    const thumbnailUrl = `${product.image?.url}` 
     const history= useHistory();
     const handleClick =() => {
         history.push(`/products/${product.id}`);

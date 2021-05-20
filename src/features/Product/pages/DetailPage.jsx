@@ -14,7 +14,7 @@ import productApi from '../../../api/productApi';
 import { addToCart } from '../../Cart/cartSlice';
 import AddToCartForm from '../components/AddToCartForm';
 import Productinfo from '../components/Productinfo';
-import ProductList from '../components/ProductList';
+import ProductListRelated from '../components/ProductListRelated';
 import ProductThumbnail from '../components/ProductThumbnail';
 import useProductDetail from '../hooks/useProductDetail';
 import './style.scss';
@@ -70,7 +70,7 @@ function DetailPage() {
     useEffect(() => {
         (async () => {
             try {
-                const {data} =await productApi.getAll({_page: 1, _limit: 3});
+                const {data} =await productApi.getAll({_page: 1, _limit:4});
                 setProductList(data);
             } catch (error) {
                 console.log('fail', error);
@@ -81,7 +81,7 @@ function DetailPage() {
     useEffect(() => {
         (async () => {
             try {
-                const {data} =await productApi.getAll({ _page: 2, _limit: 3});
+                const {data} =await productApi.getAll({ _page: 2, _limit:4});
                 setProductList2(data);
             } catch (error) {
                 console.log('fail', error);
@@ -92,7 +92,7 @@ function DetailPage() {
     useEffect(() => {
         (async () => {
             try {
-                const {data} =await productApi.getAll({ _page: 3, _limit: 3});
+                const {data} =await productApi.getAll({ _page: 3, _limit:4});
                 setProductList3(data);
             } catch (error) {
                 console.log('fail', error);
@@ -103,7 +103,7 @@ function DetailPage() {
     useEffect(() => {
         (async () => {
             try {
-                const {data} =await productApi.getAll({ _page: 4, _limit: 3});
+                const {data} =await productApi.getAll({ _page: 4, _limit:4});
                 setProductList4(data);
             } catch (error) {
                 console.log('fail', error);
@@ -174,13 +174,11 @@ function DetailPage() {
             
             <Box className='slideshow__product'>
             <h2>Related Products</h2>
-            <Slide easing="ease">
-
-            <ProductList data={productList}/>
-            <ProductList data={productList2}/>
-            <ProductList data={productList3}/>
-            <ProductList data={productList4}/>
-
+            <Slide easing="ease">   
+            <ProductListRelated data={productList}/>
+            <ProductListRelated data={productList2}/>
+            <ProductListRelated data={productList3}/>
+            <ProductListRelated data={productList4}/>
         </Slide>
             </Box>
         </Box>
