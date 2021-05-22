@@ -17,7 +17,6 @@
     cursor: pointer;
     border-bottom: 2px solid #ccc;
 }
-
 .header__nav{
     height: 40px;
     width: 100%;
@@ -70,6 +69,14 @@
 }
 
 @media (max-width: 740px){
+    .header__page{
+        width: 100%;
+        z-index: 5000;
+        position: fixed;
+        margin-top: -19.7px;
+        background-color: white;
+        height: 15%
+    }
     .nav__bar{
         margin-top: 15px;
         padding: unset;

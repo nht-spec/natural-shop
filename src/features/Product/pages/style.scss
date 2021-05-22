@@ -95,3 +95,33 @@
         margin-bottom: 50px;
     }
 }
+@media (max-width: 740px){
+    .productall__page{
+        width: 100%;
+        overflow-x: hidden;
+        padding-top: 100px;
+    }
+    .title__product{
+        margin: 20px !important;
+        &>h1{
+            letter-spacing: 0.07em !important;
+            font-size: 25px !important;
+            line-height: 24.7px !important;
+            margin-bottom: 20px !important;
+            height: unset !important;
+        }
+        &>p{
+            font-family: questrial, sans-serif;
+            font-size: 16px;
+            opacity: 0.8;
+            margin-bottom: 20px !important;
+            letter-spacing: 1px;
+            text-align: center;
+            padding: 0 20px;
+        }
+    }
+    .footer__pages{
+        width: 100% !important;
+        height: 650px !important;
+    }
+}

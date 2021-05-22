@@ -34,7 +34,7 @@ function ListPage(props) {
     }, []);
 
     return (
-        <Box>
+        <Box className='productall__page'>
             <Box className='title__product'>
             <h1>ALL PRODUCTS</h1>
             <p>Made of natural and organic ingredients</p>

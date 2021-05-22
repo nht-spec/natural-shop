@@ -81,7 +81,7 @@ const MODE= {
     dispatch(action)
   }
     return (
-        <div>
+        <div className='header__page'>
           <Box className='header__nav'>FREE SHIPPING ON ORDERS OVER 50$</Box>  
           <div className='nav__bar'>
             <Box className='cart__btn'>
