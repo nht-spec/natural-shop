@@ -19,4 +19,9 @@
             width: 135px !important;
         }
     }
+    .fraiss__items{
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        flex-direction: row;
+    }
 }
