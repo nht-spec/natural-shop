@@ -46,20 +46,75 @@
     line-height: normal;
 }
 .nav__link{
-    position: absolute;
-    top: 23.5%;
-    left: 33%;
-    font: var(--fnt,var(--font_1));
-    margin: 29px 0 0 30px;
     display: flex;
-    &>li{
-     padding: 0 30px;
-     list-style-type: none;
-     text-transform: uppercase;
+    &>ul{
+        margin-left: 28%;
+        margin-top: 13%;
+        display: flex;
+        &>li{
+         padding: 0 27px;
+         list-style-type: none;
+         text-transform: uppercase;
+         display: flex;
+         align-items: center;
+        }
     }
 }
-.login__btn{
-    position: absolute;
-    top: 60%;
-    left: 87%;
+
+.menu__list{
+    display: none;
 }
+.cart__btn{
+    float: right;
+    margin-top: 122px;
+}
+
+@media (max-width: 740px){
+    .nav__bar{
+        margin-top: 50px;
+        padding: unset;
+        display: flex;
+        height: unset;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .header__nav{
+        font-size: 10px;
+    }
+    .nav__title{
+        position: unset;
+    }
+   .nav__link{
+       display: none;
+   }
+   .menu__list{
+    display: block;
+    &>ul>li{
+       list-style-type: none;
+    }
+   }
+   .MuiMenuItem-root{
+       text-align: center !important;
+   }
+   .MuiPaper-root{
+       width: 110%;
+   }
+   .MuiPopover-paper{
+    max-width: none !important;
+    left: 0 !important;
+    height: 100% !important;
+    top: unset !important;
+   }
+   .menu__style{
+       &>li{
+           list-style-type: none;
+       }
+   }
+   .MuiMenu-paper{
+    max-height: unset !important;
+   }
+   .cart__btn{
+    float: right;
+    margin-top: unset;
+}
+}   

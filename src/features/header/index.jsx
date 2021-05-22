@@ -2,6 +2,7 @@ import { Badge, Box, Button, IconButton, makeStyles, Menu, MenuItem } from '@mat
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import { AccountCircle, Close, ShoppingCartOutlined } from '@material-ui/icons';
+import MenuIcon from '@material-ui/icons/Menu';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -16,6 +17,7 @@ Header.propTypes = {
     closeDialog: PropTypes.func,
 };
 
+
 const useStyles= makeStyles((theme)=>({
     closeButton:{
         position: 'absolute',
@@ -23,19 +25,8 @@ const useStyles= makeStyles((theme)=>({
         right: theme.spacing(1),
         zIndex: 1,
     },
-    avatar:{
-      position: 'absolute',
-      fontSize:'25px',
-      color:'rgb(66, 66, 66)',
-      top:theme.spacing(19),
-      left:theme.spacing(145),
-    },
     ShoppingCart:{
-      position: 'absolute',
-      fontSize:'25px',
-      color:'rgb(66, 66, 66)',
-      top:theme.spacing(19),
-      left:theme.spacing(152),
+      fontSize: '30px'
     }
 }));
 
@@ -53,7 +44,7 @@ const MODE= {
   const [open, setOpen] = useState(false);
   const [mode, setMode] =useState(MODE.LOGIN)
   const [anchorEl, setAnchorEl]= useState(null);
-
+  const [anchorEL, setAnchorEL]= useState(null);
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -61,12 +52,22 @@ const MODE= {
   const handleClose = () => {
     setOpen(false);
   };
+
   const handleUserClick =(e) =>{
     setAnchorEl(e.currentTarget);
   };
   const handleCloseMenu =() =>{
     setAnchorEl(null);
   };
+
+  const handleMenuClick =(e) =>{
+    setAnchorEL(e.currentTarget);
+  };
+  const handlMenuClose =() =>{
+    setAnchorEL(null);
+  };
+
+
   const handleLogoutClick=() =>{
     const action =logout();
     dispatch(action);
@@ -83,26 +84,45 @@ const MODE= {
         <div>
           <Box className='header__nav'>FREE SHIPPING ON ORDERS OVER 50$</Box>  
           <div className='nav__bar'>
-          <NavLink to='/' exact><h1 className='nav__title'>frais</h1></NavLink>
-          <ul className='nav__link '>
-            <li><NavLink className='text-decoration font' to='/products'>Shop all</NavLink></li>
-            <li><NavLink className='text-decoration font' to='/category'>For body</NavLink></li>
-            <li><NavLink className='text-decoration font' to='/productforhome'>For Home</NavLink></li>
-            <li><NavLink className='text-decoration font' to='/about'>About</NavLink></li>
-            <li><NavLink className='text-decoration font' to='/contact'>Contact</NavLink></li>
-          </ul>
-          {!isLoggedIn &&(
-          <Button  className='login__btn' onClick={handleClickOpen}>Log In</Button>         
-          )}
-
-           <IconButton className={classes.ShoppingCart} aria-label="show 4 new mails" color="inherit" onClick={handleCartClick}>
+            <Box className='cart__btn'>
+          <IconButton color="inherit" onClick={handleCartClick}>
           <Badge badgeContent= {cartItemsCount} color="secondary">
-            <ShoppingCartOutlined onClick={ handleShowMiniCart}/>
+            <ShoppingCartOutlined style={{fontSize:'30px'}} onClick={ handleShowMiniCart}/>
           </Badge>
         </IconButton>
+            </Box>
+          <NavLink style={{textDecoration:'unset'}} to='/' exact><h1 className='nav__title'>frais</h1></NavLink>
 
+        <Box className='menu__list'>
+        <Button onClick={handleMenuClick}>
+     <MenuIcon/>
+      </Button>
+      <Menu   
+        anchorEL={anchorEL}
+        keepMounted
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'right',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}
+        getContentAnchorEl={null}
+        open={Boolean(anchorEL)}
+        onClose={ handlMenuClose}
+      >
+        <MenuItem onClick={handlMenuClose}>
+        <IconButton onClick={handleClose}>
+              <Close/>
+          </IconButton>
+        <ul>
+          <li>
+          {!isLoggedIn &&(
+          <Button onClick={handleClickOpen}>Log In</Button>         
+          )}
           {isLoggedIn &&(
-            <IconButton className={classes.avatar} onClick={handleUserClick}>
+            <IconButton onClick={handleUserClick}>
               <AccountCircle />
             </IconButton>
           )}
@@ -149,7 +169,80 @@ const MODE= {
              </Box>
             </>)}
           </DialogContent>
-      </Dialog>
+          </Dialog>
+          </li>
+            <li><NavLink className='text-decoration font' to='/products'>Shop all</NavLink></li>
+            <li><NavLink className='text-decoration font' to='/category'>For body</NavLink></li>
+            <li><NavLink className='text-decoration font' to='/productforhome'>For Home</NavLink></li>
+            <li><NavLink className='text-decoration font' to='/about'>About</NavLink></li>
+            <li><NavLink className='text-decoration font' to='/contact'>Contact</NavLink></li>
+          </ul>
+        </MenuItem>
+      </Menu>
+        </Box>
+          <Box className='nav__link'>
+          <ul >
+            <li><NavLink className='text-decoration font' to='/products'>Shop all</NavLink></li>
+            <li><NavLink className='text-decoration font' to='/category'>For body</NavLink></li>
+            <li><NavLink className='text-decoration font' to='/productforhome'>For Home</NavLink></li>
+            <li><NavLink className='text-decoration font' to='/about'>About</NavLink></li>
+            <li><NavLink className='text-decoration font' to='/contact'>Contact</NavLink></li>
+            <li>
+          {!isLoggedIn &&(
+          <Button onClick={handleClickOpen}>Log In</Button>         
+          )}
+          {isLoggedIn &&(
+            <IconButton onClick={handleUserClick}>
+              <AccountCircle />
+            </IconButton>
+          )}
+          <Menu
+            anchorEl={anchorEl}
+            keepMounted
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'right',
+            }}
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            getContentAnchorEl={null}
+            open={Boolean(anchorEl)}
+            onClose={handleCloseMenu}
+          >
+            <MenuItem onClick={handleLogoutClick}>Logout</MenuItem>
+          </Menu>
+
+          <Dialog
+            disableBackdropClick
+            disableEscapeKeyDown
+            open={open} 
+            onClose={handleClose}>
+            <IconButton onClick={handleClose} className={classes.closeButton}>
+              <Close/>
+            </IconButton>
+          <DialogContent>
+            {mode === MODE.REGISTER && (
+            <>
+             <Register closeDialog={handleClose}/>
+             <Box>
+              <Button fullWidth color='primary' onClick={()=> setMode(MODE.LOGIN)}> Login here</Button>
+             </Box>
+            </>)}
+
+            {mode === MODE.LOGIN && (
+            <>
+             <Login closeDialog={handleClose}/>
+             <Box>
+              <Button fullWidth color='primary' onClick={()=> setMode(MODE.REGISTER)}>Register here</Button>
+             </Box>
+            </>)}
+          </DialogContent>
+          </Dialog>
+            </li>
+          </ul>
+          </Box>
             </div>    
         </div>
     );
