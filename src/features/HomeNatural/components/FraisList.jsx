@@ -13,7 +13,7 @@ function FraisList({fraisList}) {
         <div className='fraiss__items'>
             {fraisList.map(frais => (
                 <ul>
-                <li key={frais.id}>
+                <li key={frais.id} className='fraiss__img'>
                     <img style={{width:'207px'}} src={frais.thumbnailUrl} alt="" />
                 </li>
                 </ul>

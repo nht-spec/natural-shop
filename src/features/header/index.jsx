@@ -95,7 +95,7 @@ const MODE= {
 
         <Box className='menu__list'>
         <Button onClick={handleMenuClick}>
-     <MenuIcon/>
+     <MenuIcon  style={{fontSize:'40px'}}/>
       </Button>
       <Menu   
         anchorEL={anchorEL}

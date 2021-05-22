@@ -11,6 +11,7 @@ function Footer(props) {
     return (
         <Box className= 'footer__page'>
             <Box className='frais__list'>
+                    <Box className='frais__pagelist'>
                 <ul>
                 <h2>frais</h2>
                     <li>
@@ -29,6 +30,7 @@ function Footer(props) {
                     <NavLink to='/contact'>Contact</NavLink>
                     </li>
                 </ul>
+                    </Box>
                 <ul>
                 <h2>Help</h2>
                     <li>

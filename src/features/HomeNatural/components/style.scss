@@ -13,3 +13,10 @@
         margin-bottom: 30px;
     }
 }
+@media (max-width: 740px){
+    .fraiss__img{
+        &>img{
+            width: 135px !important;
+        }
+    }
+}

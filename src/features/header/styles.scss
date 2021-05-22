@@ -71,7 +71,7 @@
 
 @media (max-width: 740px){
     .nav__bar{
-        margin-top: 50px;
+        margin-top: 15px;
         padding: unset;
         display: flex;
         height: unset;
@@ -83,6 +83,9 @@
     }
     .nav__title{
         position: unset;
+        padding: 6px 28px;
+        font-size: 17px;
+        font-weight: 800;
     }
    .nav__link{
        display: none;

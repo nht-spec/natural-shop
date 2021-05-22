@@ -8,6 +8,7 @@
     padding: 0 5.5%;
     margin-top: 5%;
 }
+.item3__title,
 .about__btn,
 .nature__simple,
 .shopall__btn,
@@ -88,6 +89,7 @@
     flex-wrap: nowrap !important;
     flex-direction: row !important;
 }
+.item3__title,
 .item1__title{
     margin-right: 38%;
     text-align: right;
@@ -177,5 +179,127 @@
         margin-top: 30px;
         border-bottom: 2px solid black;
         margin-bottom: 50px;
+    }
+}
+.out__item3{
+    display: none !important;
+}
+@media (max-width: 740px){
+    .home__page{
+        width: 100%;
+        overflow-x: hidden;
+        padding: unset;
+    }
+    .slide__nav{
+        height: 325px;
+        position: relative;
+        &>img{
+                width: 100% !important  ;
+        }
+    }
+    .home__title{
+        position: absolute;
+        top: 37.5%;
+        letter-spacing: 2px;
+        left: 16%;
+        text-align: center;
+        &>h1{
+            width: 253px;
+            letter-spacing: unset;
+            font-size: 18px;
+            line-height: 23.4px;
+            margin-bottom: 9px;
+        }
+        &>p{
+            font-size: 13px;
+            width: 207px;
+            letter-spacing: 2.1px;
+            margin-left: 25px;
+            line-height: 21px;  
+            margin-bottom: 12px;
+            opacity: unset;
+        }
+    }
+    .shopall__btn{
+        padding: 7px 4px;
+    }
+    .out__fav{
+        width: 100%;
+        &>h1{
+            text-align: center;
+            font-size: 23px;
+            margin-bottom: 4px;
+        }
+    }
+    .item3__title,
+    .item1__title{
+        padding: 0 40px;
+        margin: unset;
+        text-align: left;
+        height: 230px;
+        &>h2{
+            font-size: 15px;
+        }
+    }
+    .out__item3{
+        display: block !important;
+    }
+    .out__item3,
+    .out__item1{
+        padding: unset;
+        flex-direction: column !important; 
+    }
+    .out__item2{
+        display: none !important;
+    }
+    .video__item{
+        &>video{
+            width: 375px !important;
+        }
+    }
+
+    .nature__simple{
+        width: 100%;
+        margin-top: 52%;
+        height: 630px;
+        &>h1{
+            text-align: center;
+            font-size: 23px;
+            margin-bottom: 4px;
+        }
+        &>p{
+            margin-bottom: 50px;
+        }
+    }
+    .natural__list{
+        padding: 0 8%;
+        flex-direction: column !important;
+    }
+    .natural__item{
+        &>p{
+            margin-left: unset;
+        }
+    }
+    .natural__img{
+        &>img{
+            width: 244px !important;
+        }
+    }
+    .about__btn{
+        top: unset;
+        right: unset;
+        left: 35%;
+        bottom: 92%;
+    }
+    .frais__page{
+        width: 100%;
+        margin-top: 45px;
+    }
+    .fraiss__items{
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+    .footer__link{
+        height: 85%;
     }
 }

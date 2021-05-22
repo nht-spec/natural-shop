@@ -64,12 +64,12 @@ function HomeNatural(props) {
                      <NavLink  className='shopsoaps__btn' to='/category'>Shop soaps</NavLink>
                     </Box>
                 </Grid>
-                <Grid item>
+                <Grid item className='video__item'>
               <video style={{width:'472px'}} src="video2.mp4" autoPlay loop></video>
                 </Grid>
              </Grid>
              <Grid container className='out__item2'>
-                <Grid item>    
+                <Grid item className='video__item'>    
               <video style={{width:'472px'}} src="video1.mp4" autoPlay loop></video>
                 </Grid>
                 <Grid item>
@@ -80,13 +80,25 @@ function HomeNatural(props) {
                     </Box>
                 </Grid>
              </Grid>
+             <Grid container className='out__item3'>
+                <Grid item>
+                <Box  className='item3__title'>
+                <h2>Nature's essence Scented Candles</h2>
+                     <p>I'm a paragraph. Click here to add your own text and edit me. Let your users get to know you.</p>
+                     <NavLink  className='shopsoaps__btn' to='/productforhome'>Shop candles</NavLink>
+                    </Box>
+                </Grid>
+                <Grid item className='video__item'>    
+              <video style={{width:'472px'}} src="video1.mp4" autoPlay loop></video>
+                </Grid>
+             </Grid>
          </Box>
 
          <Box className='nature__simple'>
            <h1>Naturally Simple</h1>
            <p>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. I’m a great place for you to tell a story and let your users know a little more about you.</p>
            <Grid container className='natural__list'>
-             <Grid item>
+             <Grid item className='natural__img'>
                <img style={{width:'361px'}} src="https://static.wixstatic.com/media/86cb94_8a3de89fe3cc4e15b70e1cb06cbb73c1~mv2_d_3938_4972_s_4_2.jpg/v1/crop/x_330,y_1411,w_3608,h_3121/fill/w_451,h_390,al_c,q_80,usm_0.66_1.00_0.01/alex-loup-393839-unsplash(hand)2.webp" alt="" />
              </Grid>
              <Grid item className='natural__item'>
@@ -105,7 +117,7 @@ function HomeNatural(props) {
              </Grid>
            </Grid>
            <h3></h3>
-         <Box>
+         <Box className='footer__link'>
            <Footer/>
          </Box>
          </Box>
