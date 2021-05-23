@@ -94,7 +94,11 @@
 @media (max-width: 740px){
     .productall__page{
         width: 100%;
-        overflow: hidden;
+        overflow-x: hidden;
+    }
+    .detail__page{
+        width: 100%;
+        overflow-x: hidden;
     }
     .title__product{
         margin: 20px !important;
