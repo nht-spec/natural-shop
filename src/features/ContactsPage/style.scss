@@ -62,7 +62,57 @@
 
 @media (max-width: 740px){
     .contact__page{
+        margin-top: unset !important;
+        display: flex;
+        flex-direction: column;
         width: 100%;
         margin-top: 131px;
+        &>h1{
+            margin:26px 0 22px 0 !important;
+            font-size: 19px;
+            letter-spacing: 1.33px;
+            line-height: 24.7px;
+
+        }
+    }
+    .contact__text{
+        width: 100%;
+        position: unset;
+        text-align: center;
+        &>p{
+            margin: 0 40px 20px 40px;
+            width: unset;
+            letter-spacing: 0.7px;
+            line-height: 25.2px;
+            font-size: 14px;
+            text-align: center;
+        }
+        &>span{
+            padding-bottom: 20px;
+        }
+    }
+    .input__list{
+        width: 100%;
+    }
+    .input__name{
+        width: unset !important;
+    }
+    .input__email{
+        width: unset !important;
+        margin-left: unset;
+    }
+    .input__title{
+        display: unset;
+    }
+    .contact__form{
+        padding: 29px 20px;
+    }
+    .footer__page3{
+         margin-top: 337px;
+        height: 690px;
+        width: 100%;
+    }
+    .footer__text{
+        margin-top: 30px;
     }
 }

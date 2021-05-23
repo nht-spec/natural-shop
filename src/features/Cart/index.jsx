@@ -27,7 +27,7 @@ function CartFeature(props) {
         dispatch(action);
         };
     return (
-    <div>
+    <div className='cart__page'>
         <Box className='cart__list'>
             <Box className='cart__info'>
             <Box className='cart__item'>
