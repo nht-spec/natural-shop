@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { Animate } from 'react-rebound';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
-import { STATIC_HOST } from '../../../constants';
 import { addToCart } from '../../Cart/cartSlice';
 import AddToCartForm from './AddToCartForm';
 import './style.scss';
