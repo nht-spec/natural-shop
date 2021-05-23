@@ -9,7 +9,7 @@ Productinfo.propTypes = {
 function Productinfo({product = {} }) {
     const { name,  PriceProducts} = product;
     return (
-    <Box>
+    <Box >
            <Typography className='products__name'>
                {name}
            </Typography>

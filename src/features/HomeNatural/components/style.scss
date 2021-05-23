@@ -20,8 +20,10 @@
         }
     }
     .fraiss__items{
+        display: flex;
+        padding: 0 55px;
         flex-wrap: wrap;
-        justify-content: space-evenly;
+        justify-content: space-between;
         flex-direction: row;
     }
 }

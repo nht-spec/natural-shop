@@ -12,6 +12,7 @@ import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import productApi from '../../../api/productApi';
 import { addToCart } from '../../Cart/cartSlice';
+import Footer from '../../footer';
 import AddToCartForm from '../components/AddToCartForm';
 import Productinfo from '../components/Productinfo';
 import ProductListRelated from '../components/ProductListRelated';
@@ -40,6 +41,9 @@ function DetailPage() {
     const [productList2, setProductList2]= useState([]);
     const [productList3, setProductList3]= useState([]);
     const [productList4, setProductList4]= useState([]);
+    const [productList5, setProductList5]= useState([]);
+    const [productList6, setProductList6]= useState([]);
+    const [productList7, setProductList7]= useState([]);
 
     const [loadingg, setLoadingg]= useState(true);
     const dispatch = useDispatch()
@@ -111,9 +115,44 @@ function DetailPage() {
             setLoadingg(false);
         })();
     }, []);
+
+    useEffect(() => {
+        (async () => {
+            try {
+                const {data} =await productApi.getAll({ _page: 1, _limit:1});
+                setProductList5(data);
+            } catch (error) {
+                console.log('fail', error);
+            }
+            setLoadingg(false);
+        })();
+    }, []);
+    useEffect(() => {
+        (async () => {
+            try {
+                const {data} =await productApi.getAll({ _page: 2, _limit:1});
+                setProductList6(data);
+            } catch (error) {
+                console.log('fail', error);
+            }
+            setLoadingg(false);
+        })();
+    }, []);
+    useEffect(() => {
+        (async () => {
+            try {
+                const {data} =await productApi.getAll({ _page: 3, _limit:1});
+                setProductList7(data);
+            } catch (error) {
+                console.log('fail', error);
+            }
+            setLoadingg(false);
+        })();
+    }, []);
     
     return (
-        <Box>
+        <Box className='detail__page'>
+            <Box className='detail__list'>
             <Container>
                 <Paper  className={classes.root} elevation={0}>
                     <Box className='page__btn'>
@@ -128,6 +167,7 @@ function DetailPage() {
                         </Button>
                     </Box>
                     </Box>
+                    <Box className='detail__productlist'>
                     <Grid container>
                         <Grid item className={classes.left}>
                          <Box className='thumbnail__page'>
@@ -169,9 +209,10 @@ function DetailPage() {
                           </Box>
                         </Grid>
                     </Grid>
+                    </Box>
                 </Paper>
             </Container>
-            
+            </Box>
             <Box className='slideshow__product'>
             <h2>Related Products</h2>
             <Slide easing="ease">   
@@ -179,8 +220,21 @@ function DetailPage() {
             <ProductListRelated data={productList2}/>
             <ProductListRelated data={productList3}/>
             <ProductListRelated data={productList4}/>
-        </Slide>
+            </Slide>
             </Box>
+            <Box className='slideshow__product2'>
+            <h2>Related Products</h2>
+            <Slide easing="ease">   
+            <ProductListRelated data={productList5}/>
+            <ProductListRelated data={productList6}/>
+            <ProductListRelated data={productList7}/>
+            </Slide>
+            <h5 style={{borderBottom:'2px solid black', margin:'50px 0'}}></h5>
+            </Box>
+            <h3 className='border__bottomstyle'></h3>
+            <Box className='footer__linkpage'>
+           <Footer  />
+         </Box>
         </Box>
     );
 }

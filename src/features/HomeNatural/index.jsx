@@ -111,11 +111,9 @@ function HomeNatural(props) {
 
          <Box className='frais__page'>
            <h1>#frais</h1>
-           <Grid container>
-             <Grid item >
-                  <FraisList fraisList={fraisList}/>
-             </Grid>
-           </Grid>
+           <Box className='fraiss__page'>
+              <FraisList fraisList={fraisList}/>
+           </Box>
            <h3></h3>
          <Box className='footer__link'>
            <Footer/>
