@@ -215,7 +215,7 @@ function DetailPage() {
             </Box>
             <Box className='slideshow__product'>
             <h2>Related Products</h2>
-            <Slide easing="ease">   
+            <Slide easing="ease">     
             <ProductListRelated data={productList}/>
             <ProductListRelated data={productList2}/>
             <ProductListRelated data={productList3}/>

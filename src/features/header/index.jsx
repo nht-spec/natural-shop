@@ -2,6 +2,7 @@ import { Badge, Box, Button, IconButton, makeStyles, Menu, MenuItem } from '@mat
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import { AccountCircle, Close, ShoppingCartOutlined } from '@material-ui/icons';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import MenuIcon from '@material-ui/icons/Menu';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
@@ -97,7 +98,8 @@ const MODE= {
         <Button onClick={handleMenuClick}>
      <MenuIcon  style={{fontSize:'40px'}}/>
       </Button>
-      <Menu   
+      <Menu
+        className='menu__app'
         anchorEL={anchorEL}
         keepMounted
         anchorOrigin={{
@@ -113,13 +115,15 @@ const MODE= {
         onClose={ handlMenuClose}
       >
         <MenuItem onClick={handlMenuClose}>
-        <IconButton onClick={handleClose}>
-              <Close/>
+        <IconButton className='menu__closebtn' onClick={handleClose}>
+              <Close style={{fontSize:'30px'}}/>
           </IconButton>
-        <ul>
+        <ul className='menu__listpages'>
           <li>
           {!isLoggedIn &&(
-          <Button onClick={handleClickOpen}>Log In</Button>         
+            <Button className='menu__loginbtn' onClick={handleClickOpen}>
+              <AccountCircleIcon style={{fontSize:'30px', marginRight:'10px'}}/>
+              Log In</Button>         
           )}
           {isLoggedIn &&(
             <IconButton onClick={handleUserClick}>
@@ -171,11 +175,11 @@ const MODE= {
           </DialogContent>
           </Dialog>
           </li>
-            <li><NavLink className='text-decoration font' to='/products'>Shop all</NavLink></li>
-            <li><NavLink className='text-decoration font' to='/category'>For body</NavLink></li>
-            <li><NavLink className='text-decoration font' to='/productforhome'>For Home</NavLink></li>
-            <li><NavLink className='text-decoration font' to='/about'>About</NavLink></li>
-            <li><NavLink className='text-decoration font' to='/contact'>Contact</NavLink></li>
+            <li><NavLink className='menu__navelink' to='/products'>Shop all</NavLink></li>
+            <li><NavLink className='menu__navelink' to='/category'>For body</NavLink></li>
+            <li><NavLink className='menu__navelink' to='/productforhome'>For Home</NavLink></li>
+            <li><NavLink className='menu__navelink' to='/about'>About</NavLink></li>
+            <li><NavLink className='menu__navelink' to='/contact'>Contact</NavLink></li>
           </ul>
         </MenuItem>
       </Menu>

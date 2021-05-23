@@ -118,5 +118,37 @@
    .cart__btn{
     float: right;
     margin-top: unset;
-}
+   }
+   .menu__app{
+       width: 100%;
+       overflow: hidden;
+   }
+   .menu__closebtn{
+    position: absolute !important;
+    right: 15px;
+    top: 15px;
+   }
+   .MuiMenu-list {
+       margin-top: 50% !important;
+   }
+   .MuiListItem-root{
+    align-items: stretch !important;
+    justify-content: center !important;
+   }
+   .menu__listpages{
+       list-style-type: unset;
+   }
+   .menu__loginbtn{
+       font-size: 30px !important;
+       color: #424242 !important;
+       text-transform: lowercase !important;
+   }
+   .menu__navelink{
+       text-decoration: unset;
+       font-family: questrial, sans-serif;
+       color: #424242;
+       font-size: 18px;
+       line-height: 56px;
+       text-transform: uppercase;
+   }
 }   
