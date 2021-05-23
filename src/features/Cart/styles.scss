@@ -85,7 +85,7 @@
     .cart__total,
     .cart__item{
         width: 100%;
-        overflow-x: hidden;
+        overflow: hidden;
         &>p{
             margin-left: 10px;
         }
